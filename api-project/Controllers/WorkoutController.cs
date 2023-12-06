@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
-
-namespace TodoApi.Controllers;
+using Api.Models;
+namespace Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -15,50 +14,50 @@ public class WorkoutsController : ControllerBase
         _context = context;
     }
 
-    // GET: api/TodoItems
+    // GET: api/workouts
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<WorkoutDTO>>> GetTodoItems()
+    public async Task<ActionResult<IEnumerable<WorkoutDTO>>> Getworkouts()
     {
         return await _context.Workouts
             .Select(x => ItemToDTO(x))
             .ToListAsync();
     }
 
-    // GET: api/TodoItems/5
+    // GET: api/workouts/5
     // <snippet_GetByID>
     [HttpGet("{id}")]
-    public async Task<ActionResult<WorkoutDTO>> GetTodoItem(long id)
+    public async Task<ActionResult<WorkoutDTO>> GetWorkout(long id)
     {
-        var todoItem = await _context.Workouts.FindAsync(id);
+        var workout = await _context.Workouts.FindAsync(id);
 
-        if (todoItem == null)
+        if (workout == null)
         {
             return NotFound();
         }
 
-        return ItemToDTO(todoItem);
+        return ItemToDTO(workout);
     }
     // </snippet_GetByID>
 
-    // PUT: api/TodoItems/5
+    // PUT: api/workouts/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     // <snippet_Update>
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutTodoItem(long id, WorkoutDTO workoutDTO)
+    public async Task<IActionResult> PutWorkout(long id, WorkoutDTO workoutDTO)
     {
         if (id != workoutDTO.Id)
         {
             return BadRequest();
         }
 
-        var todoItem = await _context.Workouts.FindAsync(id);
-        if (todoItem == null)
+        var workout = await _context.Workouts.FindAsync(id);
+        if (workout == null)
         {
             return NotFound();
         }
 
-        todoItem.Name = workoutDTO.Name;
-        todoItem.Description = workoutDTO.Description;
+        workout.Name = workoutDTO.Name;
+        workout.Description = workoutDTO.Description;
 
         try
         {
@@ -73,11 +72,11 @@ public class WorkoutsController : ControllerBase
     }
     // </snippet_Update>
 
-    // POST: api/TodoItems
+    // POST: api/workouts
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     // <snippet_Create>
     [HttpPost]
-    public async Task<ActionResult<WorkoutDTO>> PostTodoItem(WorkoutDTO workoutDTO)
+    public async Task<ActionResult<WorkoutDTO>> PostWorkouts(WorkoutDTO workoutDTO)
     {
         var workout = new Workout
         {
@@ -89,23 +88,23 @@ public class WorkoutsController : ControllerBase
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(
-            nameof(GetTodoItem),
+            nameof(Workout),
             new { id = workout.Id },
             ItemToDTO(workout));
     }
     // </snippet_Create>
 
-    // DELETE: api/TodoItems/5
+    // DELETE: api/Workout/5
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteTodoItem(long id)
+    public async Task<IActionResult> DeleteWorkout(long id)
     {
-        var todoItem = await _context.Workouts.FindAsync(id);
-        if (todoItem == null)
+        var workout = await _context.Workouts.FindAsync(id);
+        if (workout == null)
         {
             return NotFound();
         }
 
-        _context.Workouts.Remove(todoItem);
+        _context.Workouts.Remove(workout);
         await _context.SaveChangesAsync();
 
         return NoContent();

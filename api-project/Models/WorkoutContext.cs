@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace TodoApi.Models;
+namespace Api.Models;
 
 public class WorkoutContext : DbContext
 {
@@ -10,5 +10,5 @@ public class WorkoutContext : DbContext
     }
 
     public DbSet<Workout> Workouts { get; set; } = null!;
-    
+
 }

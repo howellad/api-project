@@ -1,6 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+using Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 // builder.Services.AddDbContext<WorkoutContext>(opt =>
-//     opt.UseMemoryCache("WorkoutList"));
+//     opt.UseInternalServiceProvider());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
