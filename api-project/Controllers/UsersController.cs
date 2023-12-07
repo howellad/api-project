@@ -15,7 +15,8 @@ public class UsersController : ControllerBase
 
     [HttpGet]
     public async Task<ActionResult<UserDTO>> GetUser(long id){
-        return ItemToDTO(await _context.Users.FindAsync(id));
+        var user = await _context.Users.FindAsync(id);
+        return ItemToDTO(user ?? new User());
     }
 
 
