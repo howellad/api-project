@@ -253,3 +253,5 @@
 /Users/adamhowell/Repos/api-project/api-project/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
 /Users/adamhowell/Repos/api-project/api-project/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll
 /Users/adamhowell/Repos/api-project/api-project/obj/Debug/net8.0/api-project.sourcelink.json
+/Users/adamhowell/Repos/api-project/api-project/bin/Debug/net8.0/Npgsql.dll
+/Users/adamhowell/Repos/api-project/api-project/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
