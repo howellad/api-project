@@ -1,5 +1,5 @@
-namespace Api.Models
-{
+    namespace Api.Models;
+    
     public class Workout
     {
         public long Id { get; set; }
@@ -23,4 +23,3 @@ namespace Api.Models
         PreSet,
         KickSet
     }
-}

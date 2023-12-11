@@ -7,9 +7,9 @@ namespace Api.Controllers;
 [ApiController]
 public class WorkoutsController : ControllerBase
 {
-    private readonly WorkoutContext _context;
+    private readonly SwimLogContext _context;
 
-    public WorkoutsController(WorkoutContext context)
+    public WorkoutsController(SwimLogContext context)
     {
         _context = context;
     }
