@@ -9,10 +9,11 @@ public class SwimLogContext(IConfiguration configuration) : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql(configuration.GetConnectionString("connString1"));
+        var conString = configuration.GetConnectionString("connString1");
+        optionsBuilder.UseNpgsql(conString);
     }
 
-    public DbSet<User> Users { get; set; }
+    // public DbSet<User> Users { get; set; }
     public DbSet<Workout> Workouts { get; set; }
 
 }
