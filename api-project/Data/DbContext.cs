@@ -13,7 +13,7 @@ public class SwimLogContext(IConfiguration configuration) : DbContext
         optionsBuilder.UseNpgsql(conString);
     }
 
-    // public DbSet<User> Users { get; set; }
+    public DbSet<User> Users { get; set; }
     public DbSet<Workout> Workouts { get; set; }
 
 }
