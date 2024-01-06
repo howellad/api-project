@@ -1,4 +1,4 @@
-# Swim Log Api Project
+# Swim Log Api Project (Swimly)
 The backend for the swim log (name TBD) apps
 ## Getting Started
 
