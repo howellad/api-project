@@ -1,5 +1,5 @@
 # Swim Log Api Project (Swimly)
-https://github.com/howellad/swimly-api/actions/workflows/dotnet.yml/badge.svg
+[https://github.com/howellad/swimly-api/actions/workflows/dotnet.yml/badge.svg]
 The backend for the swim log (name TBD) apps
 ## Getting Started
 
